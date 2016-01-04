@@ -4,9 +4,13 @@ var path = require('path'), join = path.join.bind(path, __dirname);
 var AUTOPREFIXER_LOADER = 'autoprefixer-loader?{browsers:[' +
     '"Android 2.3", "Android >= 4", "Chrome >= 20", "Firefox >= 24", ' +
     '"Explorer >= 8", "iOS >= 6", "Opera >= 12", "Safari >= 6"]}';
-var isProduction = process.env.NODE_ENV === 'production';
+
+var isPrepublish = process.env['npm_lifecycle_event'] === 'prepublish';
+
+var isProduction = process.env['NODE_ENV'] === 'production';
+
 var config = {
-    devtool: (isProduction ?  '#source-map' : "#eval"),
+    devtool: (isPrepublish ?  '#source-map' : "#eval"),
     devServer: {
         noInfo: true,
         hot: true,
@@ -59,7 +63,7 @@ var config = {
             }]
 
     },
-    externals: (isProduction ? [{
+    externals: (isPrepublish ? [{
         'react': true,
         'Subschema':true
     }] : null)
