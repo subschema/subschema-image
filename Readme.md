@@ -2,6 +2,19 @@ Subschema Image
 ===
 Allows for uploading of an image with a preview.
 
+##Demo
+See it in action [here](http://subschema.github.io/subschema-image)
+
+Or run it 
+
+```sh
+  git clone https://github.com/subschema/subschema-image.git
+  cd subschema-image
+  npm install
+  npm run hot &
+  open http://localhost:8081
+```
+
 ##Installation
 ```sh
  $ npm install subschema-image
