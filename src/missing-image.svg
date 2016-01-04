@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="500px" height="473px" viewBox="0 0 500 473" version="1.1" xmlns="http://www.w3.org/2000/svg"
-     xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Image_placeholder">
-            <g id="layer1" transform="translate(0.000000, 0.500000)">
-                <rect id="rect3089" stroke="#979797" fill="#F2F2F2" x="0.78691243" y="1.22679953" width="496.9671" height="470.1814"></rect>
-                <path d="M499.01462,0.47825311 L0.47517976,472.10072" id="path3050" stroke-opacity="0.53757228" stroke="#A0A0A0" stroke-width="1.00148308"></path>
-                <path d="M0.5937769,0.71414554 L497.94715,471.92085" id="path3846" stroke-opacity="0.29479771" stroke="#A0A0A0" stroke-width="0.99357301"></path>
-            </g>
-        </g>
-    </g>
+	 xmlns:xlink="http://www.w3.org/1999/xlink">
+	<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+		<g id="Image_placeholder">
+			<g id="layer1" transform="translate(0.000000, 0.500000)">
+				<rect id="rect3089" stroke="#979797" fill="#F2F2F2" x="0.78691243" y="1.22679953" width="496.9671" height="470.1814"></rect>
+				<path d="M499.01462,0.47825311 L0.47517976,472.10072" id="path3050" stroke-opacity="0.53757228" stroke="#A0A0A0" stroke-width="1.00148308"></path>
+				<path d="M0.5937769,0.71414554 L497.94715,471.92085" id="path3846" stroke-opacity="0.29479771" stroke="#A0A0A0" stroke-width="0.99357301"></path>
+			</g>
+		</g>
+	</g>
 </svg>
