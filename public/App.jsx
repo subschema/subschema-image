@@ -1,13 +1,9 @@
 "use strict";
 import React, {Component} from 'react';
 import Subschema, {loader, Form} from 'Subschema';
-import image from '../src';
+import imageloader from 'subschema-image';
 
-/**
- * This adds the GSuggests Processor.
- */
-loader.addType(image.types);
-loader.addTemplate(image.templates);
+loader.addLoader(imageloader);
 
 //A simple Schema for this configuration
 var schema = {

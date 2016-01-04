@@ -36,7 +36,7 @@ export default class ImageList extends Component {
         var Image = image;
         return <div>
             <Image type="file" multiple={true} name={`${this.props.name}-input`} src={this.props.placeholder}
-                   onChange={this.props.onChange} multiple={true}/>
+                   onChange={this.props.onChange} readAs={readAs} multiple={true}/>
             <List {...rest} />
         </div>
     }

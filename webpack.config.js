@@ -7,10 +7,8 @@ var AUTOPREFIXER_LOADER = 'autoprefixer-loader?{browsers:[' +
 
 var isPrepublish = process.env['npm_lifecycle_event'] === 'prepublish';
 
-var isProduction = process.env['NODE_ENV'] === 'production';
-
 var config = {
-    devtool: (isPrepublish ?  '#source-map' : "#eval"),
+    devtool: (isPrepublish ? '#source-map' : "#eval"),
     devServer: {
         noInfo: true,
         hot: true,
@@ -24,7 +22,8 @@ var config = {
         alias: {
             'fbjs': join('node_modules/fbjs'),
             'react': join('node_modules/react'),
-            'Subschema': join('node_modules/subschema/dist/subschema-noreact.js')
+            'Subschema': join('node_modules/subschema/dist/subschema-noreact.js'),
+            'subschema-image': join('src/index.js')
         }
     },
     stats: {
@@ -65,7 +64,7 @@ var config = {
     },
     externals: (isPrepublish ? [{
         'react': true,
-        'Subschema':true
+        'Subschema': true
     }] : null)
 };
 

@@ -22,14 +22,12 @@ Or run it
 
 ##Usage
 ```jsx
- 
- import React, {Component} from 'react';
- import Subschema, {loader,ValueManager,decorators, Form} from 'Subschema';
- import image from 'subschema-image';
 
- //adds the types and templates
- loader.addType(image.types);
- loader.addTemplate(image.templates);
+ import React, {Component} from 'react';
+ import Subschema, {loader, Form} from 'Subschema';
+ import imageloader from 'subschema-image';
+ 
+ loader.addLoader(imageloader);
  
  //A simple Schema for this configuration
  var schema = {
@@ -45,8 +43,8 @@ Or run it
      }
  }
  
- 
  export default class App extends Component {
+ 
      render() {
          return <div>
              <h3>Subschema Image Type</h3>
@@ -54,6 +52,7 @@ Or run it
          </div>
      }
  }
+
 
   
 ```
