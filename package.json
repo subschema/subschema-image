@@ -50,7 +50,7 @@
     "test-dist": "NODE_ENV=test karma start --single-run --browsers Firefox",
     "hot": "NODE_ENV=development webpack-dev-server --hot --inline --config ./webpack.config.js --entry ./public/index.jsx --output-filename=app.entry.js",
     "demo": "NODE_ENV=production webpack -p --output-path .build --entry ./public/index.jsx --output-filename=app.[hash].js --config ./webpack.config.js",
-    "prepublish": "NODE_ENV=production webpack --display-modules -p --output-path dist --entry ./src/index.js --output-library-target=umd --output-library-name GSuggests --output-filename=index.js --config ./webpack.config.js"
+    "prepublish": "NODE_ENV=production webpack --display-modules -p --output-path dist --entry ./src/index.js --output-library-target=umd --output-library-name GSuggests --output-filename=index.js --config ./webpack.config.js && npm run test-dist"
   },
   "author": "Justin Spears",
   "license": "ISC"

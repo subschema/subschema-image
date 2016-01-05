@@ -29,7 +29,7 @@ Or run it
  
  loader.addLoader(imageloader);
  
- //A simple Schema for this configuration
+ //A simple Schema for this demo.
  var schema = {
      schema: {
          image: {

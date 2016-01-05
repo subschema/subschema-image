@@ -5,9 +5,10 @@ var AUTOPREFIXER_LOADER = 'autoprefixer-loader?{browsers:[' +
     '"Android 2.3", "Android >= 4", "Chrome >= 20", "Firefox >= 24", ' +
     '"Explorer >= 8", "iOS >= 6", "Opera >= 12", "Safari >= 6"]}';
 
-var lifecycle =  process.env['npm_lifecycle_event'];
-var isPrepublish = lifecycle=== 'prepublish';
+var lifecycle = process.env['npm_lifecycle_event'];
+var isPrepublish = lifecycle === 'prepublish';
 var isKarma = process.env['NODE_ENV'] === 'test';
+var isTestDist = lifecycle === 'test-dist';
 
 var config = {
     devtool: (isPrepublish ? '#source-map' : "#eval"),
@@ -25,7 +26,7 @@ var config = {
             'fbjs': join('node_modules/fbjs'),
             'react': join('node_modules/react'),
             'Subschema': join('node_modules/subschema/dist/subschema-noreact.js'),
-            'subschema-image': join('src/index.js')
+            'subschema-image': isTestDist ? join('dist/index.js') : join('src/index.js')
         }
     },
     stats: {
@@ -37,7 +38,7 @@ var config = {
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                //do this to prevent babel fromt tanslating everything.
+                //do this to prevent babel from translating everything.
                 loader: 'babel',
                 include: [
                     join('src'),
