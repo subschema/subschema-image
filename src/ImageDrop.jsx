@@ -1,11 +1,11 @@
 "use strict";
 
 import React,{Component} from 'react';
-import {PropTypes, types, tutils} from 'Subschema';
+import {PropTypes} from 'Subschema';
 import handleImage from './handleImage';
 import Dropzone from 'react-dropzone';
 
-const map = Function.call.bind(Array.prototype.map), {Text} = types;
+const map = Function.call.bind(Array.prototype.map);
 
 export default class ImageDrop extends Component {
     static propTypes = {

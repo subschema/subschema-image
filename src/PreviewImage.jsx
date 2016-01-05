@@ -18,7 +18,7 @@ export default class PreviewImage extends Component {
     render() {
         var backgroundImage = this.props.src ? `url(${this.props.src})` : '';
         return <div className={this.props.className}
-                    style={{backgroundImage, height:this.props.height, width:this.props.width}}
+                    style={{backgroundImage}}
                     className={'preview-image'}
         ></div>
     }

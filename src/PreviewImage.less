@@ -1,7 +1,23 @@
 
 .preview-image {
+  display: inline-block;
+  margin: 10px 5px;
   background-image: url('./missing-image.svg');
   background-repeat: no-repeat;
   background-size: contain;
-  transition: background .5s ease-in-out;
+  width: 50px;
+  backface-visibility: hidden;
+
+  height: 50px;
+  transform-origin: top;
+  transition:transform .5s ease-in-out, background .5s ease-in-out, height  .5s ease-in-out, width .5s ease-in-out;
+}
+
+.preview-image:hover {
+  /*  position: fixed;
+    width: 600px;
+    height: 600px;*/
+
+  z-index: 1000;
+  transform: scale3d(10,10,1);
 }
