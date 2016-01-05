@@ -5,7 +5,9 @@ var AUTOPREFIXER_LOADER = 'autoprefixer-loader?{browsers:[' +
     '"Android 2.3", "Android >= 4", "Chrome >= 20", "Firefox >= 24", ' +
     '"Explorer >= 8", "iOS >= 6", "Opera >= 12", "Safari >= 6"]}';
 
-var isPrepublish = process.env['npm_lifecycle_event'] === 'prepublish';
+var lifecycle =  process.env['npm_lifecycle_event'];
+var isPrepublish = lifecycle=== 'prepublish';
+var isKarma = process.env['NODE_ENV'] === 'test';
 
 var config = {
     devtool: (isPrepublish ? '#source-map' : "#eval"),
@@ -31,7 +33,6 @@ var config = {
         reasons: true
     },
     module: {
-        //noParse:[/subschema-noreact\.js/],
         loaders: [
             {
                 test: /\.jsx?$/,
@@ -40,7 +41,7 @@ var config = {
                 loader: 'babel',
                 include: [
                     join('src'),
-                    join('public')
+                    isKarma ? join('test') : join('public')
                 ]
             },
             {test: /\.(png|jpe?g|mpe?g[34]?|gif)$/, loader: 'url-loader?limit=100000'},
