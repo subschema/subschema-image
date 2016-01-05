@@ -42,7 +42,8 @@ var config = {
                 loader: 'babel',
                 include: [
                     join('src'),
-                    isKarma ? join('test') : join('public')
+                    join('public'),
+                    isKarma ? join('test') : join('no_such_dir')
                 ]
             },
             {test: /\.(png|jpe?g|mpe?g[34]?|gif)$/, loader: 'url-loader?limit=100000'},

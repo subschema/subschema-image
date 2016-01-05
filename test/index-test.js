@@ -1,5 +1,6 @@
 import index from 'subschema-image';
 import expect from 'expect';
+import TestUtils from 'react-addons-test-utils';
 
 describe('index', ()=> {
 
@@ -10,4 +11,5 @@ describe('index', ()=> {
     ['PreviewImage', 'ImageContent'].forEach((type)=> {
         it(`should load template: ${type}`, ()=>expect(index.loadTemplate(type)).toExist(`${type} should be found in loader`))
     });
+
 });

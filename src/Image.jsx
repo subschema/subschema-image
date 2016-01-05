@@ -1,10 +1,10 @@
 "use strict";
+
 import React,{Component} from 'react';
 import {PropTypes, types, tutils} from 'Subschema';
 import handleImage from './handleImage';
-import PreviewImage from './PreviewImage';
-var asArray = Function.call.bind(Array.prototype.slice);
-var {Text} = types;
+
+const map = Function.call.bind(Array.prototype.map), {Text} = types;
 
 export default class Image extends Component {
     static propTypes = {
@@ -23,7 +23,7 @@ export default class Image extends Component {
         if (!(e.target.files && e.target.files.length > 0)) {
             return;
         }
-        Promise.all(asArray(e.target.files).map(handleImage(this.props.readAs))).then(this._handleChange);
+        Promise.all(map(e.target.files, handleImage(this.props.readAs))).then(this._handleChange);
     }
     _handleChange = (files)=> {
         if (this.props.multiple) {
@@ -34,10 +34,13 @@ export default class Image extends Component {
     }
 
     render() {
-        var {value,readAs, multiple, name} = this.props;
-        var inputName = `${name}-input`;
+        var {value,readAs,previewTemplate, multiple, name} = this.props;
         value = value && value.data ? value : {data: value} || {data: this.props.placeholder}
+
+        var inputName = `${name}-input`;
         var isMissing = !value.data;
+        var PreviewImage = previewTemplate;
+
         return <div>
             <Text type="file" name={inputName} id={inputName} style={{display:'none'}} multiple={multiple}
                   onChange={this.handleChange}/>
