@@ -12,7 +12,7 @@ Or run it
   cd subschema-image
   npm install
   npm run hot &
-  open http://localhost:8081
+  open http://localhost:8082
 ```
 
 ##Installation
