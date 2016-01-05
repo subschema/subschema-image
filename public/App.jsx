@@ -16,10 +16,16 @@ var schema = {
             "type": "ImageList",
             "help": "Multiple Images"
         },
-        drop: {
+        dropMultiple: {
             "type": "ImageDrop",
             "help": "Drop images"
+        },
+        dropSingle: {
+            "type": "ImageDrop",
+            "help": "Drop images",
+            "multiple": false
         }
+
     }
 }
 

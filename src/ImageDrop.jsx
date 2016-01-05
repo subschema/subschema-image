@@ -36,22 +36,23 @@ export default class ImageDrop extends Component {
     };
 
     renderImages() {
-        var {value,previewTemplate} = this.props;
+        var {value,multiple,previewTemplate} = this.props;
         var PreviewImage = previewTemplate;
         if (value == null) return null;
-        value = (Array.isArray(value)) ? value : [value];
+        value =  multiple ? value : [value];
         return value.map((img, k)=> {
             var data = img && img.data ? img.data : img;
-            return <PreviewImage key={`preview-image-${k}`} src={data}/>
+            return <PreviewImage key={`preview-image-${k}`} src={data}
+                                 className={multiple ? 'image-drop-mutiple' : 'image-drop-single'}/>
         });
     }
 
     render() {
-        var {message, multiple} = this.props;
+        var {message,value, multiple} = this.props;
 
         return <div className="image-drop">
             <Dropzone onDrop={this.handleChange} multiple={multiple}>
-                <div>{message}</div>
+                {(!value || multiple) ? <div>{message}</div> : this.renderImages()}
             </Dropzone>
             <div className="image-drop-container">
                 {multiple ? this.renderImages() : null}
