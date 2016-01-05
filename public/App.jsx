@@ -15,6 +15,10 @@ var schema = {
         images: {
             "type": "ImageList",
             "help": "Multiple Images"
+        },
+        drop: {
+            "type": "ImageDrop",
+            "help": "Drop images"
         }
     }
 }

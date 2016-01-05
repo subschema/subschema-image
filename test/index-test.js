@@ -4,7 +4,7 @@ import TestUtils from 'react-addons-test-utils';
 
 describe('index', ()=> {
 
-    ['Image', 'ImageList'].forEach((type)=> {
+    ['Image', 'ImageList', 'ImageDrop'].forEach((type)=> {
         it(`should load type: ${type}`, ()=>expect(index.loadType(type)).toExist(`${type} should be found in loader`))
     });
 
