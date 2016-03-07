@@ -9,7 +9,7 @@ export default class Image extends Component {
     handleClick = (e)=> {
         e && e.preventDefault();
         this.props.onClick(this.props.pos, this.props.value.value, this.props.pid);
-    }
+    };
 
     render() {
         var {value} = this.props.value;

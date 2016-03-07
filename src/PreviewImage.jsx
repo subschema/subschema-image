@@ -7,9 +7,10 @@ export default class PreviewImage extends Component {
     static propTypes = {
         className: PropTypes.cssClass
     };
+
     static defaultProps = {
         className: ''
-    }
+    };
 
     render() {
         var backgroundImage = this.props.src ? `url(${this.props.src})` : '';

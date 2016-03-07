@@ -12,26 +12,27 @@ export default class Image extends Component {
         readAs: PropTypes.string,
         multiple: PropTypes.bool,
         previewTemplate: PropTypes.template
-    }
+    };
+
     static defaultProps = {
         readAs: "DataURL",
         multiple: false,
         previewTemplate: 'PreviewImage'
-    }
+    };
 
     handleChange = (e)=> {
         if (!(e.target.files && e.target.files.length > 0)) {
             return;
         }
         Promise.all(map(e.target.files, handleImage(this.props.readAs))).then(this._handleChange);
-    }
+    };
     _handleChange = (files)=> {
         if (this.props.multiple) {
             this.props.onChange(files);
         } else {
             this.props.onChange(files[0]);
         }
-    }
+    };
 
     render() {
         var {value,readAs,previewTemplate, multiple, name} = this.props;
