@@ -1,6 +1,6 @@
 {
   "name": "subschema-image",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "description": "Subschema Image Type",
   "main": "dist/index.js",
   "dependencies": {},
